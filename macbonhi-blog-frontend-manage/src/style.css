@@ -1,0 +1,41 @@
+/* global.css */
+body {
+  background-color: var(--background-color)!important;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ant Design 组件深色模式适配 */
+[data-theme="dark"] {
+
+  /* 按钮 */
+  .ant-btn {
+    background-color: var(--gray-200);
+    border-color: var(--gray-300);
+    color: var(--text-color);
+  }
+
+  /* 输入框 */
+  .ant-input {
+    background-color: var(--gray-100);
+    border-color: var(--gray-300);
+    color: var(--text-color);
+  }
+
+  /* 卡片 */
+  .ant-card {
+    background-color: var(--gray-100);
+    border-color: var(--gray-300);
+  }
+}
+
+
+#app{
+  padding-top: 64px;
+}
+
+/* 编辑页面时取消顶部padding */
+body.edit-page #app {
+  padding-top: 0;
+}
+

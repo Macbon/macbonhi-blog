@@ -1,0 +1,414 @@
+:root {
+    /* 背景和文本 */
+    --background-color: #F4F2EC;  /* 主背景色改为 #f6f5f0 */
+    --background-topbar: #ffffff;  /* 顶部栏背景色也改为 #f6f5f0 */
+    --text-color: #212121;
+    --files-topbar:#F6F6F8;
+
+    /* 灰度色阶 */
+    --gray-100: #f5f5f5;
+    --gray-200: #e0e0e0;
+    --gray-300: #bdbdbd;
+    --gray-400: #9e9e9e;
+    --gray-500: #757575;
+    --gray-600: #616161;
+    --gray-700: #424242;
+    --gray-800: #282828;
+    --gray-900: #212121;
+
+    /* 彩色色阶 - 红色 */
+    --red-100: #ffebee;
+    --red-200: #ffcdd2;
+    --red-300: #ef9a9a;
+    --red-400: #e57373;
+    --red-500: #ef5350;
+    --red-600: #f44336;
+    --red-700: #e53935;
+    --red-800: #d32f2f;
+    --red-900: #c62828;
+
+    /* 彩色色阶 - 橙色 */
+    --orange-100: #fff3e0;
+    --orange-200: #ffe0b2;
+    --orange-300: #ffcc80;
+    --orange-400: #ffb74d;
+    --orange-500: #ffa726;
+    --orange-600: #ff9800;
+    --orange-700: #fb8c00;
+    --orange-800: #f57c00;
+    --orange-900: #ef6c00;
+
+    /* 彩色色阶 - 黄色 */
+    --yellow-100: #fffde7;
+    --yellow-200: #fff9c4;
+    --yellow-300: #fff59d;
+    --yellow-400: #fff176;
+    --yellow-500: #ffee58;
+    --yellow-600: #ffeb3b;
+    --yellow-700: #fdd835;
+    --yellow-800: #fbc02d;
+    --yellow-900: #f9a825;
+
+    /* 彩色色阶 - 绿色 */
+    --green-100: #e8f5e9;
+    --green-200: #c8e6c9;
+    --green-300: #a5d6a7;
+    --green-400: #81c784;
+    --green-500: #66bb6a;
+    --green-600: #4caf50;
+    --green-700: #43a047;
+    --green-800: #388e3c;
+    --green-900: #2e7d32;
+
+    /* 彩色色阶 - 青色 */
+    --teal-100: #e0f2f1;
+    --teal-200: #b2dfdb;
+    --teal-300: #80cbc4;
+    --teal-400: #4db6ac;
+    --teal-500: #26a69a;
+    --teal-600: #009688;
+    --teal-700: #00897b;
+    --teal-800: #00796b;
+    --teal-900: #00695c;
+
+    /* 彩色色阶 - 蓝色 */
+    --blue-100: #e3f2fd;
+    --blue-200: #bbdefb;
+    --blue-300: #90caf9;
+    --blue-400: #64b5f6;
+    --blue-500: #42a5f5;
+    --blue-600: #2196f3;
+    --blue-700: #1e88e5;
+    --blue-800: #1976d2;
+    --blue-900: #1565c0;
+
+    /* 彩色色阶 - 靛蓝色 */
+    --indigo-100: #e8eaf6;
+    --indigo-200: #c5cae9;
+    --indigo-300: #9fa8da;
+    --indigo-400: #7986cb;
+    --indigo-500: #5c6bc0;
+    --indigo-600: #3f51b5;
+    --indigo-700: #3949ab;
+    --indigo-800: #303f9f;
+    --indigo-900: #283593;
+
+    /* 彩色色阶 - 紫色 */
+    --purple-100: #f3e5f5;
+    --purple-200: #e1bee7;
+    --purple-300: #ce93d8;
+    --purple-400: #ba68c8;
+    --purple-500: #ab47bc;
+    --purple-600: #9c27b0;
+    --purple-700: #8e24aa;
+    --purple-800: #7b1fa2;
+    --purple-900: #6a1b9a;
+
+    /* 彩色色阶 - 粉色 */
+    --pink-100: #fce4ec;
+    --pink-200: #f8bbd0;
+    --pink-300: #f48fb1;
+    --pink-400: #f06292;
+    --pink-500: #ec407a;
+    --pink-600: #e91e63;
+    --pink-700: #d81b60;
+    --pink-800: #c2185b;
+    --pink-900: #ad1457;
+}
+
+/* 深色主题变量 */
+[data-theme="dark"] {
+    /* 背景和文本 */
+    --background-color: #25272C;  /* 深色主题背景改为 #25272C */
+    --background-topbar: #1E2025;  /* 深色主题顶部栏改为 #1E2025 */
+    --text-color: #e0e0e0;
+    --files-topbar: #25272C;
+
+    /* 灰度色阶 - 深色模式下灰度逆转 */
+    --gray-100: #282828;
+    --gray-200: #424242;
+    --gray-300: #616161;
+    --gray-400: #757575;
+    --gray-500: #9e9e9e;
+    --gray-600: #bdbdbd;
+    --gray-700: #e0e0e0;
+    --gray-800: #f5f5f5;
+    --gray-900: #ffffff;
+
+    /* 彩色色阶 - 红色 */
+    --red-100: #c62828;
+    --red-200: #d32f2f;
+    --red-300: #e53935;
+    --red-400: #f44336;
+    --red-500: #ef5350;
+    --red-600: #e57373;
+    --red-700: #ef9a9a;
+    --red-800: #ffcdd2;
+    --red-900: #ffebee;
+
+    /* 彩色色阶 - 橙色 */
+    --orange-100: #ef6c00;
+    --orange-200: #f57c00;
+    --orange-300: #fb8c00;
+    --orange-400: #ff9800;
+    --orange-500: #ffa726;
+    --orange-600: #ffb74d;
+    --orange-700: #ffcc80;
+    --orange-800: #ffe0b2;
+    --orange-900: #fff3e0;
+
+    /* 彩色色阶 - 黄色 */
+    --yellow-100: #f9a825;
+    --yellow-200: #fbc02d;
+    --yellow-300: #fdd835;
+    --yellow-400: #ffeb3b;
+    --yellow-500: #ffee58;
+    --yellow-600: #fff176;
+    --yellow-700: #fff59d;
+    --yellow-800: #fff9c4;
+    --yellow-900: #fffde7;
+
+    /* 彩色色阶 - 绿色 */
+    --green-100: #2e7d32;
+    --green-200: #388e3c;
+    --green-300: #43a047;
+    --green-400: #4caf50;
+    --green-500: #66bb6a;
+    --green-600: #81c784;
+    --green-700: #a5d6a7;
+    --green-800: #c8e6c9;
+    --green-900: #e8f5e9;
+
+    /* 彩色色阶 - 青色 */
+    --teal-100: #00695c;
+    --teal-200: #00796b;
+    --teal-300: #00897b;
+    --teal-400: #009688;
+    --teal-500: #26a69a;
+    --teal-600: #4db6ac;
+    --teal-700: #80cbc4;
+    --teal-800: #b2dfdb;
+    --teal-900: #e0f2f1;
+
+    /* 彩色色阶 - 蓝色 */
+    --blue-100: #1565c0;
+    --blue-200: #1976d2;
+    --blue-300: #1e88e5;
+    --blue-400: #2196f3;
+    --blue-500: #42a5f5;
+    --blue-600: #64b5f6;
+    --blue-700: #90caf9;
+    --blue-800: #bbdefb;
+    --blue-900: #e3f2fd;
+
+    /* 彩色色阶 - 靛蓝色 */
+    --indigo-100: #283593;
+    --indigo-200: #303f9f;
+    --indigo-300: #3949ab;
+    --indigo-400: #3f51b5;
+    --indigo-500: #5c6bc0;
+    --indigo-600: #7986cb;
+    --indigo-700: #9fa8da;
+    --indigo-800: #c5cae9;
+    --indigo-900: #e8eaf6;
+
+    /* 彩色色阶 - 紫色 */
+    --purple-100: #6a1b9a;
+    --purple-200: #7b1fa2;
+    --purple-300: #8e24aa;
+    --purple-400: #9c27b0;
+    --purple-500: #ab47bc;
+    --purple-600: #ba68c8;
+    --purple-700: #ce93d8;
+    --purple-800: #e1bee7;
+    --purple-900: #f3e5f5;
+
+    /* 彩色色阶 - 粉色 */
+    --pink-100: #ad1457;
+    --pink-200: #c2185b;
+    --pink-300: #d81b60;
+    --pink-400: #e91e63;
+    --pink-500: #ec407a;
+    --pink-600: #f06292;
+    --pink-700: #f48fb1;
+    --pink-800: #f8bbd0;
+    --pink-900: #fce4ec;
+}
+
+[data-theme="dark"] .ant-drawer-header,
+[data-theme="dark"] .ant-drawer-body,
+[data-theme="dark"] .ant-pagination,
+[data-theme="dark"] .ant-pagination-item,
+[data-theme="dark"] .ant-pagination-simple,
+[data-theme="dark"] .ant-pagination-simple-pager,
+[data-theme="dark"] .ant-pagination-simple-pager input {
+    background-color: var(--background-topbar) !important;
+    color: var(--text-color) !important;
+    border-color: var(--gray-700) !important;
+}
+
+[data-theme="dark"] .ant-drawer-title {
+    color: var(--text-color) !important;
+}
+
+/* 浅色模式弹窗背景 */
+.ant-modal-content {
+    background-color: var(--background-topbar) !important;
+    color: var(--text-color) !important;
+}
+
+/* 深色模式弹窗背景 */
+[data-theme="dark"] .ant-modal-content {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+.ant-modal-header {
+    background: var(--background-topbar) !important;
+    color: var(--text-color) !important;
+    border-bottom: 1px solid var(--gray-200) !important;
+}
+
+[data-theme="dark"] .ant-modal-header {
+    background: var(--background-color) !important;
+    color: var(--text-color) !important;
+    border-bottom: 1px solid var(--gray-500) !important;
+}
+
+.ant-modal-title {
+    color: var(--text-color) !important;
+}
+
+/* 浅色模式 Popconfirm 气泡框适配 */
+.ant-popover-inner {
+    background: var(--background-topbar) !important;
+    color: var(--text-color) !important;
+}
+
+.ant-popover-title,
+.ant-popover-inner-content {
+    color: var(--text-color) !important;
+}
+/* Popconfirm 气泡框内输入框适配 */
+.ant-popover-inner .ant-input {
+    background: var(--background-topbar) !important;
+    color: var(--text-color) !important;
+    border-color: var(--gray-300) !important;
+}
+
+[data-theme="dark"] .ant-popover-inner .ant-input {
+    background: var(--gray-200) !important;
+    color: var(--text-color) !important;
+    border-color: var(--gray-500) !important;
+}
+
+/* Popconfirm 气泡框内输入框外层适配 */
+.ant-popover-inner .ant-input-affix-wrapper {
+    background: var(--background-topbar) !important;
+    color: var(--text-color) !important;
+    border-color: var(--gray-300) !important;
+}
+
+
+/* 深色模式 Popconfirm 气泡框适配 */
+[data-theme="dark"] .ant-popover-inner {
+    background: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .ant-popover-title,
+[data-theme="dark"] .ant-popover-inner-content {
+    color: var(--text-color) !important;
+}
+.ant-popover-inner .ant-input::placeholder {
+    color: var(--gray-400) !important;
+}
+
+[data-theme="dark"] .ant-popover-inner .ant-input::placeholder {
+    color: var(--gray-600) !important;
+}
+
+[data-theme="dark"] .ant-popover-inner .ant-input-affix-wrapper {
+    background: var(--gray-200) !important;
+    color: var(--text-color) !important;
+    border-color: var(--gray-500) !important;
+}
+
+/* Popconfirm 气泡框自定义标题适配 */
+.ant-popover-inner .ant-popover-title,
+.ant-popover-inner .ant-popover-title *,
+.ant-popover-inner p,
+.ant-popover-inner span,
+.ant-popover-inner div {
+    color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .ant-popover-inner .ant-popover-title,
+[data-theme="dark"] .ant-popover-inner .ant-popover-title *,
+[data-theme="dark"] .ant-popover-inner p,
+[data-theme="dark"] .ant-popover-inner span,
+[data-theme="dark"] .ant-popover-inner div {
+    color: var(--text-color) !important;
+}
+
+/* 浅色模式下分页器适配 */
+.ant-pagination,
+.ant-pagination-item,
+.ant-pagination-prev,
+.ant-pagination-next,
+.ant-pagination-jump-prev,
+.ant-pagination-jump-next,
+.ant-pagination-options {
+    background: var(--background-topbar) !important;
+    color: var(--text-color) !important;
+    border-color: var(--gray-200) !important;
+}
+
+/* 深色模式下分页器适配 */
+[data-theme="dark"] .ant-pagination,
+[data-theme="dark"] .ant-pagination-item,
+[data-theme="dark"] .ant-pagination-prev,
+[data-theme="dark"] .ant-pagination-next,
+[data-theme="dark"] .ant-pagination-jump-prev,
+[data-theme="dark"] .ant-pagination-jump-next,
+[data-theme="dark"] .ant-pagination-options {
+    background: var(--background-color) !important;
+    color: var(--text-color) !important;
+    border-color: var(--gray-500) !important;
+}
+
+/* 当前页高亮适配（包括内部a标签） */
+.ant-pagination-item-active,
+.ant-pagination-item-active a {
+    background: var(--blue-100) !important;
+    color: var(--blue-600) !important;
+    border-color: var(--blue-600) !important;
+}
+[data-theme="dark"] .ant-pagination-item-active,
+[data-theme="dark"] .ant-pagination-item-active a {
+    background: var(--gray-300) !important;
+    color: var(--text-color) !important;
+    border-color: var(--gray-300) !important;
+}
+
+/* 悬浮时也适配 */
+.ant-pagination-item-active:hover,
+.ant-pagination-item-active a:hover {
+    background: var(--blue-100) !important;
+    color: var(--blue-600) !important;
+}
+[data-theme="dark"] .ant-pagination-item-active:hover,
+[data-theme="dark"] .ant-pagination-item-active a:hover {
+    background: var(--gray-200) !important;
+    color: var(--blue-400) !important;
+}
+
+/* Popconfirm 标题字体颜色适配 */
+.ant-popover-inner .ant-popover-title,
+.ant-popconfirm .ant-popover-title {
+    color: var(--text-color) !important;
+}
+[data-theme="dark"] .ant-popover-inner .ant-popover-title,
+[data-theme="dark"] .ant-popconfirm .ant-popover-title {
+    color: var(--text-color) !important;
+}
+

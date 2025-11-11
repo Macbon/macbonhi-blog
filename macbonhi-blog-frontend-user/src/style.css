@@ -1,0 +1,124 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--text-color);
+  background-color: var(--background-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* 修改 body 样式 */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color)!important;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  -ms-overflow-style: none; /* IE和Edge隐藏滚动条 */
+}
+
+a {
+  font-weight: 500;
+  color: var(--blue-600);
+  text-decoration: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--blue-500);
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--text-color);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--gray-300);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  border-color: var(--blue-500);
+  background-color: var(--blue-100);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
+.card {
+  padding: 2em;
+  background-color: var(--background-topbar);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px var(--gray-200);
+}
+
+/* 修改 #app 样式 */
+#app {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+
+  a:hover {
+    color: var(--blue-500);
+  }
+
+  button {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+}
+
+/* 额外的重置样式 */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #app {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease;
+}

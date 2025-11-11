@@ -1,0 +1,30 @@
+# Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# 构建目录
+/dist
+/.cache
+.output
+
+# 编辑器配置
+/.vscode
+/.idea
+
+# 本地环境文件
+.env.local
+.env.*.local
+
+# 版本控制
+.git
+.gitignore
+
+# 其他文件
+*.md
+.DS_Store
+docs
+tests
+docker-compose.yml
+Dockerfile* 

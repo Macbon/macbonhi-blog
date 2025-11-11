@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  # 后端API服务
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: macbonhi-api
+    restart: always
+    ports:
+      - "3000:3000"  # 暴露API端口
+    environment:
+      - NODE_ENV=production
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=root  # 安全起见，生产环境应通过环境变量或Docker Secret管理
+      - DB_NAME=macbonhiblog
+    volumes:
+      - ./uploads:/app/uploads  # 持久化上传文件
+    depends_on:
+      - db
+    networks:
+      - macbonhi-network
+      
+  # 数据库服务
+  db:
+    image: mysql:8.0
+    container_name: macbonhi-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root  # 安全起见，生产环境应通过环境变量或Docker Secret管理
+      MYSQL_DATABASE: macbonhiblog
+    volumes:
+      - db-data:/var/lib/mysql  # 持久化数据
+      - ./update_file_table.sql:/docker-entrypoint-initdb.d/update_file_table.sql  # 初始化SQL脚本
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - macbonhi-network
+    ports:
+      - "3306:3306"  # 开发环境可以暴露数据库端口，生产环境应移除此行
+      
+# 创建自定义网络，便于与前端服务通信
+networks:
+  macbonhi-network:
+    driver: bridge
+
+# 数据持久化卷
+volumes:
+  db-data:
+    driver: local 

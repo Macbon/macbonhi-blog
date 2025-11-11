@@ -1,0 +1,43 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# 环境变量和秘钥
+.env
+.env.local
+.env.*.local
+.env.production
+*.pem
+*.key
+
+# 上传的文件
+uploads/*
+!uploads/.gitkeep
+
+# 日志
+logs/
+*.log
+
+# 编辑器配置
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 构建输出
+dist/
+build/
+.cache/
+
+# 临时文件
+tmp/
+temp/ 

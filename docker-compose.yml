@@ -1,0 +1,116 @@
+version: '3'
+
+services:
+  # 数据库
+  db:
+    image: mysql:8.0
+    container_name: macbonhi-db
+    restart: always
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - db-data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    networks:
+      - macbonhi-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 20s
+      retries: 10
+    expose:
+      - "3306"
+
+  # 后端API服务
+  api:
+    build:
+      context: ./macbonhi-blog-backend
+      dockerfile: Dockerfile
+    container_name: macbonhi-api
+    restart: on-failure:5
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - PORT=${PORT}
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRES_IN=${JWT_EXPIRES_IN}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+    volumes:
+      - ./uploads:/app/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - macbonhi-network
+    # user: "1000:1000"  # 注释掉或删除这行，可能导致权限问题
+    deploy:
+      resources:
+        limits:
+          cpus: '2.0'        # 增加到2核CPU
+          memory: 2G         # 增加到2GB内存
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/health', res => process.exit(res.statusCode === 200 ? 0 : 1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+
+  # 注释掉前端构建服务，因为我们直接使用已上传的 dist
+  # frontend-user:
+  #   build:
+  #     context: ./macbonhi-blog-frontend-user
+  #     dockerfile: Dockerfile
+  #   container_name: macbonhi-frontend-user
+  #   volumes:
+  #     - user-dist:/dist
+  #   networks:
+  #     - macbonhi-network
+
+  # frontend-manage:
+  #   build:
+  #     context: ./macbonhi-blog-frontend-manage
+  #     dockerfile: Dockerfile
+  #   container_name: macbonhi-frontend-manage
+  #   volumes:
+  #     - manage-dist:/dist
+  #   networks:
+  #     - macbonhi-network
+
+  # Nginx代理服务器 - 直接挂载本地 dist 目录
+  nginx:
+    image: nginx:alpine
+    container_name: macbonhi-nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+      # 直接挂载已上传的 dist 目录
+      - ./macbonhi-blog-frontend-user/dist:/usr/share/nginx/html
+      - ./macbonhi-blog-frontend-manage/dist:/usr/share/nginx/html/admin
+      - ./uploads:/usr/share/nginx/html/uploads
+    depends_on:
+      - api
+    networks:
+      - macbonhi-network
+
+networks:
+  macbonhi-network:
+    driver: bridge
+
+volumes:
+  db-data:
+  # 不再需要这些 volumes
+  # user-dist:
+  # manage-dist:
